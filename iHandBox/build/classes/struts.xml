@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <constant name="struts.devMode" value="true" />
+
+    <package name="default" namespace="/" extends="struts-default">
+    </package>
+    <package name="weChat" extends="struts-default">
+	    <action name="verify" class="weChat.Verify">
+	  		<result name="success" type="dispatcher">/successVerify.jsp</result>
+		    <result name="error" type="dispatcher">/error.jsp</result>
+		    <result name="reply" type="dispatcher">/reply.jsp</result>
+	   	</action>
+   	</package>
+   	
+   	<package name="urlAction" extends="struts-default">
+	    <action name="openbox" class="urlAction.OpenBoxAction">
+	   		<result name="success" type="dispatcher">/openSuccess.jsp</result>
+	   	</action>
+	   	<action name="getboxinfo" class="urlAction.GetBoxInfo">
+	   		<result name="success" type="dispatcher">/boxInfoSuccess.jsp</result>
+	   	</action>
+	   	<action name="getcheckinfo" class="urlAction.GetCheckInfo">
+	   		<result name="success" type="dispatcher">/checkInfoSuccess.jsp</result>
+	   	</action>
+	</package>  	
+</struts>
